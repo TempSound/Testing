@@ -1,12 +1,26 @@
-Feature: Participación en Redes de Colaboración para Solistas
+Feature: Gestión de contratos para artistas
 
-  Scenario: Participación en Redes de Colaboración Exitosa
-    Given que un solista desea colaborar con otros músicos
-    When solicita unirse a redes de colaboración en la plataforma
-    Then debería recibir acceso a nuevas oportunidades creativas y conexiones con otros artistas
-    And puede ampliar su red profesional y explorar proyectos colaborativos
+  Scenario: Visualizar detalles de un contrato
+    Given que el artista tiene un contrato pendiente con el organizador del evento "Concierto en Vivo"
+    When el artista accede a la plataforma y visualiza los detalles del contrato
+    Then se muestran los términos y condiciones del contrato para el evento "Concierto en Vivo"
 
-  Scenario: Problemas con la Participación en Redes
-    Given que un solista intenta unirse a redes de colaboración en la plataforma
-    When encuentra dificultades técnicas o su solicitud no es procesada correctamente
-    Then el solista no puede acceder a nuevas oportunidades de colaboración
+  Scenario: Aceptar un contrato
+    Given que el artista tiene un contrato pendiente con el organizador del evento "Concierto en Vivo"
+    When el artista revisa los términos y condiciones y decide aceptar el contrato
+    Then el contrato para el evento "Concierto en Vivo" se marca como aceptado en el sistema
+
+  Scenario: Rechazar un contrato
+    Given que el artista tiene un contrato pendiente con el organizador del evento "Concierto en Vivo"
+    When el artista revisa los términos y condiciones y decide rechazar el contrato
+    Then el contrato para el evento "Concierto en Vivo" se marca como rechazado en el sistema
+
+  Scenario: Notificar al organizador sobre la aceptación del contrato
+    Given que el artista ha aceptado el contrato para el evento "Concierto en Vivo"
+    When el contrato es aceptado en la plataforma
+    Then se envía una notificación al organizador del evento informándole sobre la aceptación del contrato
+
+  Scenario: Notificar al organizador sobre el rechazo del contrato
+    Given que el artista ha rechazado el contrato para el evento "Concierto en Vivo"
+    When el contrato es rechazado en la plataforma
+    Then se envía una notificación al organizador del evento informándole sobre el rechazo del contrato
