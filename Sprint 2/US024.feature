@@ -1,12 +1,11 @@
-Feature: Participación en Redes de Colaboración para Solistas
+Feature: Visualización de información del artista o grupo
 
-  Scenario: Participación en Redes de Colaboración Exitosa
-    Given que un solista desea colaborar con otros músicos
-    When solicita unirse a redes de colaboración en la plataforma
-    Then debería recibir acceso a nuevas oportunidades creativas y conexiones con otros artistas
-    And puede ampliar su red profesional y explorar proyectos colaborativos
+  Scenario: Ver información detallada del artista o grupo
+    Given que el cliente desea conocer más sobre el artista o grupo
+    When accede a la página de información del artista o grupo
+    Then se muestra la biografía, género musical y una imagen del artista o grupo
 
-  Scenario: Problemas con la Participación en Redes
-    Given que un solista intenta unirse a redes de colaboración en la plataforma
-    When encuentra dificultades técnicas o su solicitud no es procesada correctamente
-    Then el solista no puede acceder a nuevas oportunidades de colaboración
+  Scenario: Ver información actualizada del artista o grupo
+    Given que el cliente ha visitado la página del artista o grupo anteriormente
+    When regresa a la página en una fecha posterior
+    Then se muestra la información actualizada, incluyendo nuevas fotos, vídeos, y actualizaciones en la biografía o discografía
