@@ -1,12 +1,33 @@
-Feature: Participación en Redes de Colaboración para Solistas
+Feature: Integración de perfiles de streaming musical
 
-  Scenario: Participación en Redes de Colaboración Exitosa
-    Given que un solista desea colaborar con otros músicos
-    When solicita unirse a redes de colaboración en la plataforma
-    Then debería recibir acceso a nuevas oportunidades creativas y conexiones con otros artistas
-    And puede ampliar su red profesional y explorar proyectos colaborativos
+  Escenario: Conectar perfil de Spotify
+    Dado que soy un artista
+    Cuando accedo a mi perfil de artista en la plataforma de música
+    Entonces veo la opción de conectar mi perfil de Spotify
+    Y hago clic en "Conectar"
+    Entonces soy redirigido a la página de inicio de sesión de Spotify
+    Cuando ingreso mis credenciales de Spotify y doy permiso
+    Entonces mi perfil de artista se conecta exitosamente a mi cuenta de Spotify
 
-  Scenario: Problemas con la Participación en Redes
-    Given que un solista intenta unirse a redes de colaboración en la plataforma
-    When encuentra dificultades técnicas o su solicitud no es procesada correctamente
-    Then el solista no puede acceder a nuevas oportunidades de colaboración
+  Escenario: Conectar perfil de Apple Music
+    Dado que soy un artista
+    Cuando accedo a mi perfil de artista en la plataforma de música
+    Entonces veo la opción de conectar mi perfil de Apple Music
+    Y hago clic en "Conectar"
+    Entonces soy redirigido a la página de inicio de sesión de Apple Music
+    Cuando ingreso mis credenciales de Apple Music y doy permiso
+    Entonces mi perfil de artista se conecta exitosamente a mi cuenta de Apple Music
+
+  Escenario: Desconectar perfil de Spotify
+    Dado que soy un artista con mi perfil de Spotify conectado
+    Cuando accedo a la configuración de mi perfil en la plataforma de música
+    Entonces veo la opción de desconectar mi perfil de Spotify
+    Y hago clic en "Desconectar"
+    Entonces mi perfil de artista se desconecta de mi cuenta de Spotify
+
+  Escenario: Desconectar perfil de Apple Music
+    Dado que soy un artista con mi perfil de Apple Music conectado
+    Cuando accedo a la configuración de mi perfil en la plataforma de música
+    Entonces veo la opción de desconectar mi perfil de Apple Music
+    Y hago clic en "Desconectar"
+    Entonces mi perfil de artista se desconecta de mi cuenta de Apple Music
